@@ -28,7 +28,7 @@ export class UsersController {
     return await this.usersService.pullObject(req.user._id, paramDTO.id)
   }
 
-  @Roles('admin')
+  @Roles('ADMIN')
   @UseGuards(JwtAuthGuard,RoleGuard)
   @Get()
   async findAll(@Request() req){
